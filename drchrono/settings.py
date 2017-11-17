@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '=*l&a&rk7jmiw$3euke*z9lu-na!^j^i&ddejfik!ajqlaymmc'
 
-SOCIAL_AUTH_ONPATIENT_KEY = 'JjMnQfExWACCuuyfFeFEXb5vKriXzMzcN3hOFqZB'
-SOCIAL_AUTH_ONPATIENT_SECRET = 'FQHNFDbYeWnFmlE0whYIHyJsR5lhxLCP6I9BEdy65YTOUqVMbXngPQCMjdeGOglr8LyHuJyOTyyygkQCcKcPaJknLy6lkSbYRuJYbjELXetFmFPkGEiFa5foRWgoaLTK'
-SOCIAL_AUTH_ONPATIENT_SCOPE = ['patient/*.read']
+SOCIAL_AUTH_DRCHRONO_KEY = '5Epf2lQ9XPpnHoYA6Xi14k89JTWLXBwvYfQl36nU'
+SOCIAL_AUTH_DRCHRONO_SECRET = 'rxAnIsliIsxMC2YARlKeePvdMZsaIByOd36XFcV8jE8AKFXcPHblw0NUoPji6B3FQqPKanX2GuefAHqA9y12Z5GChmTVaRiNl4IyftQjnEhu8lKk3VludTg3aD0hSLL3'
+SOCIAL_AUTH_DRCHRONO_SCOPE = ['patient/*.read']
 LOGIN_REDIRECT_URL = '/health_app'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -58,7 +58,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    'social_auth_drchrono.backends.onpatientOAuth2',
+    'social_auth_drchrono.backends.drchronoOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 

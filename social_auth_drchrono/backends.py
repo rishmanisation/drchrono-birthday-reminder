@@ -1,18 +1,18 @@
 import os
 from social.backends.oauth import BaseOAuth2
 
-class onpatientOAuth2(BaseOAuth2):
+class drchronoOAuth2(BaseOAuth2):
     """
-    onpatient OAuth authentication backend
+    drchrono OAuth authentication backend
     """
 
-    name = 'onpatient'
+    name = 'drchrono'
     ID_KEY = 'username'
-    AUTHORIZATION_URL = 'https://onpatient.com/o/authorize/'
-    ACCESS_TOKEN_URL = 'https://onpatient.com/o/token/'
+    AUTHORIZATION_URL = 'https://drchrono.com/o/authorize/'
+    ACCESS_TOKEN_URL = 'https://drchrono.com/o/token/'
     ACCESS_TOKEN_METHOD = 'POST'
     REDIRECT_STATE = False
-    USER_DATA_URL = 'https://drchrono.com/onpatient_api/fhir/Patient'
+    USER_DATA_URL = 'https://drchrono.com/api/users/current'
     EXTRA_DATA = [
         ('refresh_token', 'refresh_token'),
         ('expires_in', 'expires_in')
