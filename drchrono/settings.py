@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from .keys import Keys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,12 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=*l&a&rk7jmiw$3euke*z9lu-na!^j^i&ddejfik!ajqlaymmc'
+SECRET_KEY = Keys.SECRET_KEY
 
-SOCIAL_AUTH_DRCHRONO_KEY = '5Epf2lQ9XPpnHoYA6Xi14k89JTWLXBwvYfQl36nU'
-SOCIAL_AUTH_DRCHRONO_SECRET = 'rxAnIsliIsxMC2YARlKeePvdMZsaIByOd36XFcV8jE8AKFXcPHblw0NUoPji6B3FQqPKanX2GuefAHqA9y12Z5GChmTVaRiNl4IyftQjnEhu8lKk3VludTg3aD0hSLL3'
-SOCIAL_AUTH_DRCHRONO_SCOPE = ['patient/*.read']
-LOGIN_REDIRECT_URL = '/health_app'
+SOCIAL_AUTH_DRCHRONO_KEY = Keys.CLIENT_ID
+SOCIAL_AUTH_DRCHRONO_SECRET = Keys.CLIENT_SECRET
+SOCIAL_AUTH_DRCHRONO_SCOPE = ['patients:read', 'patients:write', 'clinical:read']
+LOGIN_REDIRECT_URL = '/birthday_reminder'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -35,7 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'health_app.apps.HealthAppConfig',
+    'birthday_reminder.app.BirthdayReminderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
